@@ -14,19 +14,22 @@ public class Monstres {
     private double armure;
     private boolean vie;
     private double defense;
-    public Monstres(double pv, double degats, double armure, boolean vie){
+    private String nom;
+    public Monstres(double pv, double degats, double armure, boolean vie, String nom){
         this.pv = pv;
         this.degats = degats;
         this.vie = true;
         this.armure = armure;
         this.defense = armure;
+        this.nom = nom;
     }
         
         public Monstres(){
-            this.pv =100;
-            this.degats = 20;
-            this.armure = 50;
+            this.pv =pv;
+            this.degats = degats;
+            this.armure = armure;
             this.vie = true;
+            this.nom = nom;
             
         }
         public double getPv(){
@@ -40,6 +43,9 @@ public class Monstres {
         }
         public boolean getVie(){
             return this.vie;
+        }
+        public String getNom(){
+            return this.nom;
         }
         public void setPv(double pv){
           
@@ -57,6 +63,9 @@ public class Monstres {
         public void setVie(boolean vie){
             
             this.vie = vie;  
+        }
+        public void setNom (String nom){
+            this.nom = nom;
         }
         public void attaquer(Personnage p){
             armure = defense;
@@ -77,13 +86,14 @@ public class Monstres {
             
                         }
                 public  String toString(){
-        return ("vous perdez" + degats + "points de vie et" + armure + "de points d'armure, le monstre a" + pv);
+        return ("Le monstre " + nom + " vous fait perdre " + degats + "points de vie et" + armure + "de points d'armure, le monstre a" + pv);
             }
                 public void loose(Personnage p){
                     if (p.getPv()<=0)
                     System.out.println("vous avez perdu");
                 }
-        }
+                
+                }
     
             
     

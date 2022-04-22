@@ -11,8 +11,8 @@ package jeux.de.role;
 public class Goblins extends Monstres {
     private double critical_attack;
     
-public Goblins (double pv, double degats, double armure, boolean vie, double critical_attack){
-    super(pv, degats, armure, vie);
+public Goblins (double pv, double degats, double armure, boolean vie, double critical_attack, String nom){
+    super(pv, degats, armure, vie, nom);
     this.critical_attack = critical_attack;
 }
 public double getCritical_attack(){
@@ -23,7 +23,10 @@ public void setCritical_attack(double critical_attack){
 }
 
 public void big_attack(){
-this.critical_attack = getDegats()*2;
-    
+    System.out.println("le goblin a " + this.pv + "points de vie");
+this.critical_attack = getDegats()*2;    
+}
+public void  jouer(){
+    big_attack();
 }
 }
